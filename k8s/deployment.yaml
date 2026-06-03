@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resil-k8s-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: resil-k8s-app
+  template:
+    metadata:
+      labels:
+        app: resil-k8s-app
+    spec:
+      containers:
+        - name: resil-k8s-app
+          image: nginx:latest
+          ports:
+            - containerPort: 80
